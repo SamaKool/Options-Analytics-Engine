@@ -25,9 +25,16 @@ options-analytics/
 3. **Implied Volatility Solver:** Reverse-engineers market fear ($\sigma$) from option prices using numerical optimization.
 ## The Math
 The engine implements the closed-form Black-Scholes solution:
-$$C = S N(d_1) - K e^{-rT} N(d_2)$$ $$P = K e^{-rT} N(-d_2) - S N(-d_1)$$Where:$$d_1 = \frac{\ln(S/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}}$$
+
+$$C = S N(d_1) - K e^{-rT} N(d_2)$$ $$P = K e^{-rT} N(-d_2) - S N(-d_1)$$
+Where:
+$$d_1 = \frac{\ln(S/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}}$$
+
 **Implied Volatility (Newton-Raphson)**
-Since $\sigma$ cannot be isolated algebraically, we solve for the root of the difference between Market Price and Model Price using the Newton-Raphson iteration, using **Vega** as the derivative:$$\sigma_{new} = \sigma_{old} - \frac{Price_{BS}(\sigma) - Price_{Market}}{Vega(\sigma)}$$
+Since $\sigma$ cannot be isolated algebraically, we solve for the root of the difference between Market Price and Model Price using the Newton-Raphson iteration, using **Vega** as the derivative:
+
+$$\sigma_{new} = \sigma_{old} - \frac{Price_{BS}(\sigma) - Price_{Market}}{Vega(\sigma)}$$
+
 ## Visualizations: The Physics of Options
 The engine plots the Greeks to visualize risk exposure across different strike prices.
 - **Red Line:** Current Strike Price ($100).
@@ -50,4 +57,5 @@ Check `implied_volatility.py` to see the solver in action:
     # Example Usage
     iv = implied_volatility(S=100, K=100, T=1, r=0.05, price_market=10.45)
     print(f"Implied Volatility: {iv}")
+
     ```
