@@ -45,11 +45,11 @@ The engine plots the Greeks to visualize risk exposure across different strike p
 ## How to Run1. 
 1. **Install Dependencies**
     ```
-    Bashpip install -r requirements.txt
+    pip install -r requirements.txt
     ```
 2. **Run the Visualization**
     ```
-    Bashpython plot_greeks.py
+    python plot_greeks.py
     ```
 3. **Calculate Implied Volatility**
 Check `implied_volatility.py` to see the solver in action:
@@ -59,4 +59,5 @@ Check `implied_volatility.py` to see the solver in action:
     print(f"Implied Volatility: {iv}")
 
     ```
+
 
