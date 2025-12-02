@@ -40,7 +40,7 @@ The engine plots the Greeks to visualize risk exposure across different strike p
 - **Red Line:** Current Strike Price ($100).
 - **Green Curve (Gamma):** Shows that risk/acceleration is highest At-The-Money.
 
-<img width="100%" alt="plot greeks" src="./Greek Plots.png" />  
+<img width="100%" alt="plot greeks" src="./Options Analytics Engine/Greek Plots.png" />  
 
 ## How to Run1. 
 1. **Install Dependencies**
@@ -59,3 +59,4 @@ Check `implied_volatility.py` to see the solver in action:
     print(f"Implied Volatility: {iv}")
 
     ```
+
